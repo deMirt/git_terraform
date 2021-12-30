@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
 
 data "aws_availability_zones" "available" {}
@@ -25,7 +25,7 @@ resource "aws_security_group" "my_webserver" {
     create_before_destroy = true
   }
   dynamic "ingress" {
-    for_each = ["80", "443", "22"]
+    for_each = var.allow_ports
     content {
       from_port   = ingress.value
       to_port     = ingress.value

@@ -70,6 +70,7 @@ Starting count ...  ${x} !!! <br>
 %{ endfor ~}<br>
 Server PrivateIP : <font color="blue"> $myip </font> <br>
 </div>
+
 <div align="left" id="layer3" >
 Build by Terraform <br>
 Region : ${region} <br>
